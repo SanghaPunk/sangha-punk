@@ -13,12 +13,12 @@
     "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.2",
+    "@astrojs/react": "^5.0.0",
     "@fontsource-variable/outfit": "^5.2.8",
     "@tailwindcss/vite": "^4.2.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^5.18.1",
+    "astro": "^6.0.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.577.0",
