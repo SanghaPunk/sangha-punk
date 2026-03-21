@@ -1,7 +1,6 @@
 ---
 import Layout from "@/layouts/main.astro";
-import Header from "@/components/Header.astro";
-import Button from "@/components/Button.astro";
+import Card from "@/components/Card.astro";
 ---
 
 <Layout>
@@ -10,15 +9,19 @@ import Button from "@/components/Button.astro";
     <h2 class="text-4xl">
       Uma comunidade budista revolucionária para o século 21, com um toque de Brasil.
     </h2>
-    <p>
-      Para ter uma introdução filosófica ao budismo, sem
-      <em>business</em> e <em>papo de coach</em>:
-    </p>
-    <!-- <Button> é um placeholder.
-         Talvez usar um card com uma imagem ilustrativa .
-    -->
-    <Button class="min-h-16 w-80">Guia SanghaPunk</Button>
-    <p>Conheça nosso manifesto.</p>
-    <Button class="min-h-16 w-80">Manifesto</Button>
+    <div class="flex gap-4">
+      <Card
+        title="Guia SanghaPunk"
+        description="Uma introdução filosófica ao budismo, sem <em>business</em> e <em>papo de coach</em>."
+        imageUrl="/guia.jpg"
+        href="/guia"
+      />
+      <Card
+        title="Manifesto"
+        description="O que é a SanghaPunk? Conheça."
+        imageUrl="/manifesto-crop.jpg"
+        href="/manifesto"
+      />
+    </div>
   </div>
 </Layout>
