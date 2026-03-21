@@ -1,8 +1,12 @@
 ---
-import Nav from "./Nav.astro"
+import Nav from "./Nav.astro";
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
-<header class="px-4 py-2 flex items-center justify-start gap-2">
-    <img src="/logo.png" alt="Logo SanghaPunk" class="h-12 w-auto" />
-    <Nav />
+<header class="flex items-center gap-4 px-4 py-2">
+  <img id="logo" src="/logo-light.png" alt="Logo SanghaPunk" class="h-12 w-auto" />
+  <Nav />
+  <div class="ml-auto">
+    <ThemeIcon />
+  </div>
 </header>
