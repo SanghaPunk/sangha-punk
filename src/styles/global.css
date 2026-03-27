@@ -96,7 +96,7 @@
   --card-foreground: var(--color-brown-950);
   --popover: var(--color-neutral-250);
   --popover-foreground: var(--color-brown-950);
-  --primary: var(--color-red-610);
+  --primary: var(--color-red-900);
   --primary-foreground: var(--color-neutral-250);
   --primary-accent: var(--color-red-400);
   --secondary: var(--color-orange-450);
@@ -105,7 +105,7 @@
   --muted: var(--color-brown-100);
   --muted-foreground: var(--color-brown-700);
   --accent: var(--color-brown-200);
-  --accent-foreground: var(--color-orange-900);
+  --accent-foreground: var(--color-neutral-250);
   --info: var(--color-sky-300);
   --info-foreground: var(--color-sky-950);
   --success: var(--color-green-300);
@@ -137,7 +137,7 @@
   --card-foreground: var(--color-neutral-250);
   --popover: var(--color-orange-900);
   --popover-foreground: var(--color-neutral-250);
-  --primary: var(--color-red-610);
+  --primary: var(--color-red-900);
   --primary-foreground: var(--color-neutral-250);
   --primary-accent: var(--color-red-400);
   --secondary: var(--color-orange-450);
