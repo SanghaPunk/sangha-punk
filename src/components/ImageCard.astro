@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "@/components/starwind/card";
+import SkeletonImage from "./SkeletonImage.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  imageSrc: ImageMetadata;
+  href?: string;
+  class?: string;
+}
+
+const { title, description, imageSrc, href, class: className } = Astro.props as Props;
+---
+
+<Card class={`${"w-96 h-80 overflow-hidden pt-0"} ${className || ""}`}>
+  <a href={href} class={href ? "block h-full" : undefined}>
+    <SkeletonImage
+      src={imageSrc}
+      alt={title}
+      width={384}
+      height={192}
+      fit="cover"
+      class="mb-2 h-48 overflow-hidden rounded-t-xl"
+      imgClass="h-full w-full object-cover"
+    />
+    <CardContent>
+      <CardTitle set:html={title} />
+      {description && <CardDescription set:html={description} />}
+    </CardContent>
+  </a>
+</Card>
