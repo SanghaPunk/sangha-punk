@@ -1,6 +1,9 @@
 ---
 import Layout from "@/layouts/main.astro";
-import Card from "@/components/Card.astro";
+import ImageCard from "@/components/ImageCard.astro";
+
+import Guia from "@/assets/guia.jpg";
+import Manifesto from "@/assets/manifesto-crop.jpg";
 ---
 
 <Layout>
@@ -10,16 +13,16 @@ import Card from "@/components/Card.astro";
       Uma comunidade budista revolucionária para o século 21, com um toque de Brasil.
     </h2>
     <div class="flex gap-4">
-      <Card
+      <ImageCard
         title="Guia SanghaPunk"
         description="Uma introdução filosófica ao budismo, sem <em>business</em> e <em>papo de coach</em>."
-        imageUrl="/guia.jpg"
+        imageSrc={Guia}
         href="/guia"
       />
-      <Card
+      <ImageCard
         title="Manifesto"
         description="O que é a SanghaPunk? Conheça."
-        imageUrl="/manifesto-crop.jpg"
+        imageSrc={Manifesto}
         href="/manifesto"
       />
     </div>

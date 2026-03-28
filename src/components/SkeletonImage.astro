@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import { Skeleton } from "@/components/starwind/skeleton";
+
+type AstroImageProps = Parameters<typeof Image>[0];
+
+type Props = AstroImageProps & {
+  class?: string;
+  imgClass?: string;
+};
+
+const { class: className = "", imgClass = "", ...imgProps } = Astro.props as Props;
+---
+
+<div class={`group relative ${className}`}>
+  <Skeleton class="absolute inset-0 group-[.loaded]:hidden" />
+
+  <Image
+    {...imgProps}
+    class={`h-full w-full opacity-0 transition-opacity duration-500 group-[.loaded]:opacity-100 ${imgClass}`}
+    onload="this.parentElement.classList.add('loaded')"
+  />
+</div>
