@@ -2,10 +2,22 @@
 import NavItem from "./NavItem.astro";
 ---
 
-<nav class="relative flex max-w-max flex-1 justify-center">
-  <ul class="flex flex-1 list-none items-baseline justify-center gap-4">
-    <NavItem href="/" style="text-2xl font-bold">SanghaPunk</NavItem>
-    <NavItem href="/guia">Guia</NavItem>
-    <NavItem href="/manifesto">Manifesto</NavItem>
+<nav class="w-full">
+  <ul class="flex list-none items-center gap-2 md:gap-4">
+    <NavItem href="/">
+      <img
+        id="logo"
+        src="/logo-light.png"
+        alt="Logo SanghaPunk"
+        class="m-0 h-12 w-auto"
+      />
+      <h1 class="hidden text-2xl font-bold md:block">SanghaPunk</h1>
+    </NavItem>
+    <NavItem href="/guia">
+      <h2 class="text-xl font-bold md:font-medium">Guia</h2>
+    </NavItem>
+    <NavItem href="/manifesto">
+      <h2 class="text-xl font-bold md:font-medium">Manifesto</h2>
+    </NavItem>
   </ul>
 </nav>
