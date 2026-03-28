@@ -20,7 +20,7 @@ interface Props {
 const { title, description, imageSrc, href, class: className } = Astro.props as Props;
 ---
 
-<Card class={`${"w-96 h-80 overflow-hidden pt-0"} ${className || ""}`}>
+<Card class={`${"max-w-96 h-80 overflow-hidden pt-0"} ${className || ""}`}>
   <a href={href} class={href ? "block h-full" : undefined}>
     <SkeletonImage
       src={imageSrc}
@@ -33,7 +33,7 @@ const { title, description, imageSrc, href, class: className } = Astro.props as 
     />
     <CardContent>
       <CardTitle set:html={title} />
-      {description && <CardDescription set:html={description} />}
+      {description && <CardDescription set:html={description} class="overflow-ellipsis overflow-hidden"/>}
     </CardContent>
   </a>
 </Card>
