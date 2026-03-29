@@ -1,10 +1,10 @@
 ---
 const { href, style } = Astro.props;
-const isSelected = Astro.url.pathname === href
+const isSelected = Astro.url.pathname === href;
 ---
 
-<li class={`${style} ${isSelected && "border-b-2 border-primary"}`}>
-  <a href={href} class={`${!isSelected && "hover:text-muted-foreground"}`}>
+<li class={`${isSelected && "not-first:border-b-2 not-first:border-primary"}`}>
+  <a href={href} class={`${style} ${!isSelected && "hover:text-muted-foreground"} flex items-center gap-2 w-full`}>
     <slot />
   </a>
 </li>
