@@ -1,13 +1,13 @@
-name: Deploy Staging
+name: Deploy Production
 
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   deploy:
     uses: ./deploy.yaml
     with:
-      environment: staging
+      environment: production
     secrets: inherit
