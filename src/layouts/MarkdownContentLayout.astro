@@ -1,0 +1,24 @@
+---
+import MainLayout from "./MainLayout.astro";
+import SkeletonImage from "@/components/SkeletonImage.astro";
+const { frontmatter } = Astro.props;
+
+const image = (await import(frontmatter.image.src)).default;
+---
+
+<MainLayout>
+  <div class="wrap flex max-w-3xl flex-col gap-4 px-2">
+    <SkeletonImage
+      src={image}
+      alt={frontmatter.title}
+      class="rounded-lg"
+      height="192"
+      width="384"
+      class="mb-2 h-32 md:h-48 overflow-hidden rounded-xl"
+      imgClass="h-full w-full object-cover"
+    />
+    <h1 class="text-3xl font-bold md:text-5xl">{frontmatter.title}</h1>
+    <h4 class="text-sm text-primary-accent text-right">Por {frontmatter.author}</h4>
+    <slot />
+  </div>
+</MainLayout>
