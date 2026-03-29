@@ -35,7 +35,7 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: 🔨 Build 
+      - name: 🔨 Build
         run: pnpm build
 
       - name: 🚀 Deploy to AWS (${{ inputs.environment }})
