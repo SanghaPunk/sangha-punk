@@ -11,12 +11,6 @@ on:
         required: true
       AWS_SECRET_ACCESS_KEY:
         required: true
-    vars:
-      AWS_REGION:
-        required: true
-    outputs:
-      environment:
-        value: ${{ inputs.environment }}
 
 jobs:
   deploy:
