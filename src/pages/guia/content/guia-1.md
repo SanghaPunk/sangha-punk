@@ -10,16 +10,6 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+O **Budismo** é uma filosofia/religiosidade que surgiu na Índia no século VI a.e.c. Seu criador, **Siddharta Gautama**, era um ávido crítico das instituições da época, especialmente do **sistema de castas**. Ele não queria criar mais uma instituição ou religião, seu objetivo era **investigar a natureza do sofrimento humano** (*dukkha*), **como podemos nos libertar dessa condição** - e no caminho - **contribuir com a libertação dos outros**, tendo a compaixão como base.
 
-## What I've accomplished
-
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
-
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+É importante entender que classificar o Budismo apenas como religião ou apenas como filosofia é uma **dificuldade ocidental**. Ele opera no terreno da **experiência** e da **investigação da mente**. A estrutura criada por Gautama Buda se baseia em três pilares fundamentais que se entrelaçam: **As 4 Nobres Verdades** (o diagnóstico), **o Nobre Caminho Óctuplo** (a prescrição) e **as 3 Jóias** (o compromisso).
