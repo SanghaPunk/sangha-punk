@@ -14,11 +14,13 @@ const image = (await import(frontmatter.image.src)).default;
       class="rounded-lg"
       height="192"
       width="384"
-      class="mb-2 h-32 md:h-48 overflow-hidden rounded-xl"
+      class="mb-2 h-32 overflow-hidden rounded-xl md:h-48"
       imgClass="h-full w-full object-cover"
     />
     <h1 class="text-3xl font-bold md:text-5xl">{frontmatter.title}</h1>
-    <h4 class="text-sm text-primary-accent text-right">Por {frontmatter.author}</h4>
-    <slot />
+    <h4 class="text-right text-sm text-secondary-accent">Por {frontmatter.author}</h4>
+    <article class="prose md:prose-lg prose-neutral dark:prose-invert">
+      <slot />
+    </article>
   </div>
 </MainLayout>
