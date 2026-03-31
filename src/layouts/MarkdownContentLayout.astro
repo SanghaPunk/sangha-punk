@@ -19,7 +19,7 @@ const image = (await import(frontmatter.image.src)).default;
     />
     <h1 class="text-3xl font-bold md:text-5xl">{frontmatter.title}</h1>
     <h4 class="text-right text-sm text-secondary-accent">Por {frontmatter.author}</h4>
-    <article class="prose md:prose-lg prose-neutral dark:prose-invert">
+    <article class="prose md:prose-lg prose-neutral dark:prose-invert text-justify">
       <slot />
     </article>
   </div>
