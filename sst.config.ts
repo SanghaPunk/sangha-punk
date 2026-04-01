@@ -10,6 +10,11 @@ export default $config({
     };
   },
   async run() {
-    new sst.aws.Astro("SanghaPunk");
+    new sst.aws.Astro("SanghaPunk", {
+      domain: {
+        name: "sanghapunk.com",
+        aliases: ["www.sanghapunk.com"],
+      },
+    });
   },
 });
