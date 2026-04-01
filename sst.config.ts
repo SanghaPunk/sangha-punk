@@ -14,6 +14,7 @@ export default $config({
       domain: {
         name: "sanghapunk.com",
         aliases: ["www.sanghapunk.com"],
+        dns: false,
       },
     });
   },
