@@ -1,0 +1,15 @@
+name: Destroy Preview Environment
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  destroy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Destroy
+        run: |
+          pnpx sst remove --stage preview-pr-${{ github.event.pull_request.number }}
