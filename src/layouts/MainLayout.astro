@@ -13,9 +13,9 @@ import Footer from "@/components/Footer.astro";
     <title>{SITE_TITLE}</title>
     <meta name="description" content={SITE_DESCRIPTION} />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col md:items-center">
     <Header />
-    <main class="wrap flex flex-col place-items-center gap-2 px-4 py-8">
+    <main class="wrap flex flex-col place-items-center gap-2 px-4 py-8 max-w-7xl w-full">
       <slot />
     </main>
     <Footer />

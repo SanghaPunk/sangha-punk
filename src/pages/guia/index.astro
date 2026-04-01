@@ -1,6 +1,76 @@
 ---
-import Layout from "@/layouts/main.astro"
+import ImageCard from "@/components/ImageCard.astro";
+import Layout from "@/layouts/MainLayout.astro";
+import Guia1 from "@/assets/guia-1.jpg";
+import Guia2 from "@/assets/guia-2.jpg";
+import Guia3 from "@/assets/guia-3.jpg";
+import Guia4 from "@/assets/guia-4.jpg";
+import Guia5 from "@/assets/guia-5.jpg";
+import Guia6 from "@/assets/guia-6.jpg";
+import Guia7 from "@/assets/guia-7.jpg";
+import Guia8 from "@/assets/guia-8.jpg";
+import Guia9 from "@/assets/complementar.png";
 ---
-<Layout> 
 
+<Layout>
+  <h2 class="text-3xl font-bold md:text-5xl">Guia SanghaPunk</h2>
+  <h3 class="text-lg md:text-2xl">Uma introdução filosófica ao budismo</h3>
+  <div
+    class="md: flex flex-col flex-wrap items-center justify-center gap-6 px-2 pt-4 md:flex-row"
+  >
+    <ImageCard
+      title="O que é o budismo?"
+      description="Filosofia, religião ou caminho?"
+      imageSrc={Guia1}
+      href="/guia/content/guia-1/"
+    />
+    <ImageCard
+      title="Quem foi Siddharta Gautama?"
+      description="O Buda entre a História e o Símbolo"
+      imageSrc={Guia2}
+      href="/guia/content/guia-2/"
+    />
+    <ImageCard
+      title="As 4 Nobres Verdades"
+      description="A Verdade sobre o Sofrimento e a Libertação"
+      imageSrc={Guia3}
+      href="/guia/content/guia-3/"
+    />
+    <ImageCard
+      title="O Nobre Caminho Óctuplo"
+      description="A Roda do Darma"
+      imageSrc={Guia4}
+      href="/guia/content/guia-4/"
+    />
+    <ImageCard
+      title="As 3 Jóias"
+      description="Tri-ratna"
+      imageSrc={Guia5}
+      href="/guia/content/guia-5/"
+    />
+    <ImageCard
+      title="Por onde começar?"
+      description="Navios no oceano"
+      imageSrc={Guia6}
+      href="/guia/content/guia-6/"
+    />
+    <ImageCard
+      title="Um mapa das tradições"
+      description="Breve resumo para investigação posterior"
+      imageSrc={Guia7}
+      href="/guia/content/guia-7/"
+    />
+    <ImageCard
+      title="Meditação"
+      description="A Tecnologia da Mente"
+      imageSrc={Guia8}
+      href="/guia/content/guia-8/"
+    />
+    <ImageCard
+      title="Recursos Complementares"
+      description="Materiais para aprofundamento"
+      imageSrc={Guia9}
+      href="/guia/content/guia-9/"
+    />
+  </div>
 </Layout>
