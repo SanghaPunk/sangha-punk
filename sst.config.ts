@@ -15,6 +15,7 @@ export default $config({
         name: "sanghapunk.com",
         aliases: ["www.sanghapunk.com"],
         dns: false,
+        cert: process.env.SST_CERT_ARN,
       },
     });
   },
