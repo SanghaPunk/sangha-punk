@@ -1,0 +1,36 @@
+name: Deploy Preview Environment
+
+on:
+  pull_request: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  preview:
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      environment: pr-${{ github.event.pull_request.number }}
+    secrets: inherit
+    concurrency:
+      group: pr-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
+  output:
+    needs: preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get SST outputs
+        run: pnpx sst outputs > outputs.json
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const outputs = JSON.parse(fs.readFileSync('outputs.json', 'utf8'));
+            const url = outputs.SanghaPunk?.url || "Preview deployed";
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🚀 Preview deployed: ${url}`
+            });
