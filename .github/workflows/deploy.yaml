@@ -11,12 +11,19 @@ on:
         required: true
       AWS_SECRET_ACCESS_KEY:
         required: true
+    outputs:
+      url:
+        description: "Preview URL"
+        value: ${{ jobs.deploy.outputs.url }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     environment: ${{ inputs.environment }}
+
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
 
     steps:
       - name: 🌩️ Checkout repo
@@ -39,7 +46,16 @@ jobs:
         run: pnpm build
 
       - name: 🚀 Deploy to AWS (${{ inputs.environment }})
-        run: pnpm sst deploy --stage ${{ inputs.environment }}
+        id: deploy
+        run: |
+          OUTPUT=$(pnpm sst deploy --stage ${{ inputs.environment }})
+
+          echo "$OUTPUT"
+
+          # Extract CloudFront URL
+          URL=$(echo "$OUTPUT" | grep -Eo 'https://[^ ]+cloudfront.net' | head -n 1)
+
+          echo "url=$URL" >> $GITHUB_OUTPUT
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
