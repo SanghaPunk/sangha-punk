@@ -3,7 +3,11 @@ import MainLayout from "./MainLayout.astro";
 import SkeletonImage from "@/components/SkeletonImage.astro";
 const { frontmatter } = Astro.props;
 
-const image = (await import(frontmatter.image.src)).default;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/**/*.{png,jpg,jpeg,webp,avif}",
+  { eager: true }
+);
+const image = images[frontmatter.image.src]?.default;
 ---
 
 <MainLayout>

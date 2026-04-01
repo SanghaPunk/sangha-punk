@@ -5,7 +5,7 @@ pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'comunidade SanghaPunk'
 image:
-    src: '../assets/guia-1.jpg'
+    src: '/src/assets/guia-1.jpg'
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public"]
 ---
