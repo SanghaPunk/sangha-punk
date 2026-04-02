@@ -1,6 +1,6 @@
 ---
 const { href, style } = Astro.props;
-const isSelected = Astro.url.pathname === href;
+const isSelected = Astro.url.pathname === href || (href !== "/" && Astro.url.pathname.includes(href));
 ---
 
 <li class={`${isSelected && "not-first:border-b-2 not-first:border-primary"}`}>
