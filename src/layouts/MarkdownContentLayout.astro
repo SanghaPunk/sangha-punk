@@ -8,23 +8,62 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   { eager: true }
 );
 const image = images[frontmatter.image.src]?.default;
+
+const next = frontmatter.next
+  ? {
+      title: frontmatter.next.title,
+      href: `/content/${frontmatter.next.slug}/`,
+    }
+  : null;
+
+const prev = frontmatter.prev
+  ? {
+      title: frontmatter.prev.title,
+      href: `/content/${frontmatter.prev.slug}/`,
+    }
+  : null;
 ---
 
 <MainLayout>
-  <div class="wrap flex max-w-3xl flex-col gap-4 px-2">
+  <div class="wrap flex max-w-4xl flex-col gap-4 px-2">
     <SkeletonImage
       src={image}
       alt={frontmatter.title}
       class="rounded-lg"
       height="192"
       width="384"
-      class="mb-2 h-32 overflow-hidden rounded-xl md:h-48"
+      class="mb-4 h-32 overflow-hidden rounded-xl md:h-48"
       imgClass="h-full w-full object-cover"
     />
-    <h1 class="text-3xl font-bold md:text-5xl">{frontmatter.title}</h1>
-    <h4 class="text-right text-sm text-secondary-accent">Por {frontmatter.author}</h4>
-    <article class="prose md:prose-lg prose-neutral dark:prose-invert text-justify">
+    <article
+      class="prose max-w-none text-justify prose-neutral md:prose-lg dark:prose-invert prose-headings:text-left prose-h1:text-3xl prose-h1:md:text-5xl prose-h4:text-right"
+    >
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.author && <h4>Por {frontmatter.author}</h4>}
+
       <slot />
     </article>
+    <div class="mt-8 flex flex-wrap justify-between">
+      {
+        prev && (
+          <a
+            href={prev.href}
+            class="mt-4 text-primary hover:underline dark:text-secondary"
+          >
+            {`<< Anterior:`} {prev.title}
+          </a>
+        )
+      }
+      {
+        next && (
+          <a
+            href={next.href}
+            class="mt-4 ml-auto text-primary hover:underline dark:text-secondary"
+          >
+            {`Próximo:`} {next.title} {`>>`}
+          </a>
+        )
+      }
+    </div>
   </div>
 </MainLayout>
