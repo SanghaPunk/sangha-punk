@@ -51,9 +51,19 @@ jobs:
           set -o pipefail
 
           pnpm sst deploy --stage ${{ inputs.environment }} | tee deploy.log
+          DEPLOY_EXIT=${PIPESTATUS[0]}
 
-          # Extract CloudFront URL AFTER successful deploy
-          URL=$(grep -Eo 'https://[^ ]+cloudfront.net' deploy.log | head -n 1)
+          if [ $DEPLOY_EXIT -ne 0 ]; then
+            echo "❌ Deploy failed"
+            exit $DEPLOY_EXIT
+          fi
+
+          echo "✅ Deploy succeeded"
+
+          # Extract the URL from the final SST output line
+          URL=$(grep 'SanghaPunk:' deploy.log | awk '{print $2}')
+
+          echo "Detected URL: $URL"
 
           echo "url=$URL" >> $GITHUB_OUTPUT
         env:
