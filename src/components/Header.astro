@@ -1,11 +1,16 @@
 ---
+import DiscordIcon from "./DiscordIcon.astro";
 import Nav from "./Nav.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 
-<header class="flex items-center py-2 px-4 max-w-7xl justify-between w-full">
+<header class="flex w-full max-w-7xl items-center justify-between px-4 py-2">
   <Nav />
-  <div class="ml-auto">
+  <div class="ml-auto flex items-center gap-4">
+    <a href="https://discord.gg/SBN7U6Jns9" target="_blank" rel="noopener noreferrer">
+      <DiscordIcon />
+    </a>
     <ThemeIcon />
+    
   </div>
 </header>
