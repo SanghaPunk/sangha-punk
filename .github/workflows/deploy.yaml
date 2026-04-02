@@ -48,12 +48,12 @@ jobs:
       - name: 🚀 Deploy to AWS (${{ inputs.environment }})
         id: deploy
         run: |
-          OUTPUT=$(pnpm sst deploy --stage ${{ inputs.environment }})
+          set -o pipefail
 
-          echo "$OUTPUT"
+          pnpm sst deploy --stage ${{ inputs.environment }} | tee deploy.log
 
-          # Extract CloudFront URL
-          URL=$(echo "$OUTPUT" | grep -Eo 'https://[^ ]+cloudfront.net' | head -n 1)
+          # Extract CloudFront URL AFTER successful deploy
+          URL=$(grep -Eo 'https://[^ ]+cloudfront.net' deploy.log | head -n 1)
 
           echo "url=$URL" >> $GITHUB_OUTPUT
         env:
