@@ -12,6 +12,7 @@ export default $config({
   async run() {
     const stage = $app.stage;
     const isProd = stage === "production";
+    const isStaging = stage === "staging";
 
     new sst.aws.Astro("SanghaPunk", {
       domain: isProd
@@ -21,7 +22,14 @@ export default $config({
             dns: false,
             cert: process.env.SST_CERT_ARN,
           }
-        : undefined,
+        : isStaging
+          ? {
+              name: "stg.sanghapunk.com",
+              aliases: ["stg.sanghapunk.com"],
+              dns: false,
+              cert: process.env.SST_CERT_ARN,
+            }
+          : undefined,
     });
   },
 });
