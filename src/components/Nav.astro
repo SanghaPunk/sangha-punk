@@ -1,15 +1,26 @@
 ---
 import NavItem from "./NavItem.astro";
+import SkeletonImage from "./SkeletonImage.astro";
 ---
 
 <nav class="w-full">
   <ul class="flex list-none items-center gap-2 md:gap-4">
     <NavItem href="/">
-      <img
+      <SkeletonImage
         id="logo"
         src="/logo-light.png"
         alt="Logo SanghaPunk"
-        class="m-0 h-12 w-auto"
+        class="m-0 h-12 w-auto dark:hidden"
+        width={48}
+        height={48}
+      />
+      <SkeletonImage
+        id="logo"
+        src="/logo-dark.png"
+        alt="Logo SanghaPunk"
+        class="m-0 hidden h-12 w-auto dark:block"
+        width={48}
+        height={48}
       />
       <h1 class="hidden text-2xl font-bold md:block">SanghaPunk</h1>
     </NavItem>
