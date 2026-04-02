@@ -12,4 +12,4 @@ jobs:
 
       - name: Destroy
         run: |
-          pnpx sst remove --stage preview-pr-${{ github.event.pull_request.number }}
+          pnpm sst remove --stage preview-pr-${{ github.event.pull_request.number }}
