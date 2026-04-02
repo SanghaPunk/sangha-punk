@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownContentLayout.astro
-title: 'O Refúgio: As 3 Jóias'
+title: 'Um Mapa das Tradições'
 pubDate: 2026-04-02
-description: 'Um Mapa das Tradições'
+description: 'Introdução básica ao budismo'
 author: 'comunidade SanghaPunk'
 image:
     src: '/src/assets/guia-7.jpg'
