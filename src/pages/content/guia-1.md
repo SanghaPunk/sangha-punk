@@ -1,13 +1,15 @@
 ---
-layout: ../../../layouts/MarkdownContentLayout.astro
+layout: ../../layouts/MarkdownContentLayout.astro
 title: 'O que é o Budismo?'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
+pubDate: 2026-04-01
+description: 'Introdução básica ao budismo'
 author: 'comunidade SanghaPunk'
 image:
     src: '/src/assets/guia-1.jpg'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+    alt: 'Crianças pesquisando a internet'
+next:
+    title: 'Quem foi Siddharta Gautama?'
+    slug: 'guia-2'
 ---
 
 O **Budismo** é uma filosofia/religiosidade que surgiu na Índia no século VI a.e.c. Seu criador, **Siddharta Gautama**, era um ávido crítico das instituições da época, especialmente do **sistema de castas**. Ele não queria criar mais uma instituição ou religião, seu objetivo era **investigar a natureza do sofrimento humano** (*dukkha*), **como podemos nos libertar dessa condição** - e no caminho - **contribuir com a libertação dos outros**, tendo a compaixão como base.
