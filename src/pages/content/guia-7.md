@@ -5,8 +5,8 @@ pubDate: 2026-04-02
 description: 'Um Mapa das Tradições'
 author: 'comunidade SanghaPunk'
 image:
-    src: '/src/assets/guia-5.jpg'
-    alt: 'Monge fazendo sinal da paz'
+    src: '/src/assets/guia-7.jpg'
+    alt: ''
 prev:
     title: 'Por onde começar?'
     slug: 'guia-6'
