@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import BackToTop from "@/components/BackToTop.astro";
 ---
 
 <html lang="en">
@@ -18,6 +19,7 @@ import Footer from "@/components/Footer.astro";
     <main class="wrap flex flex-col place-items-center gap-2 px-4 py-8 max-w-7xl w-full">
       <slot />
     </main>
+    <BackToTop />
     <Footer />
   </body>
 </html>
