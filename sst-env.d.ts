@@ -10,6 +10,10 @@ declare module "sst" {
       "type": "sst.aws.Astro"
       "url": string
     }
+    "SanghaPunk": {
+      "type": "sst.aws.Astro"
+      "url": string
+    }
   }
 }
 /// <reference path="sst-env.d.ts" />
