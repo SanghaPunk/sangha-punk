@@ -14,6 +14,8 @@ export default $config({
     const isProd = stage === "production";
     const isStaging = stage === "staging";
 
+    const forum = isProd ? (await import("./infra/forum")).createForum() : {};
+
     new sst.aws.Astro("SanghaPunk", {
       domain: isProd
         ? {
@@ -31,5 +33,7 @@ export default $config({
             }
           : undefined,
     });
+
+    return { ...forum };
   },
 });

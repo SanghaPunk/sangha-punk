@@ -5,7 +5,7 @@
     "**/*"
   ],
   "exclude": [
-    "dist","sst.config.ts"
+    "dist","sst.config.ts","infra"
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
