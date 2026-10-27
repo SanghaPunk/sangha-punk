@@ -14,7 +14,11 @@ export default $config({
     const isProd = stage === "production";
     const isStaging = stage === "staging";
 
-    new sst.aws.Astro("SanghaPunk", {
+    new sst.aws.StaticSite("SanghaPunk", {
+      build: {
+        command: "pnpm run build",
+        output: "dist",
+      },
       domain: isProd
         ? {
             name: "sanghapunk.com",

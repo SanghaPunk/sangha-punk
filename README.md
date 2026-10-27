@@ -14,8 +14,7 @@ Em desenvolvimento. Muitas funcionalidades ainda estão sendo implementadas e re
 
 ## Tecnologias e Frameworks Utilizados
 
-- **Astro**: Framework principal para construção do site. Astro permite criar sites rápidos e otimizados, com suporte a componentes nativos e geração de páginas estáticas. É ideal para conteúdo focado em performance.
-- **React**: Atualmente usado como placeholders para componentes. No futuro, esses componentes serão substituídos por componentes nativos do Astro para reduzir dependências e melhorar a velocidade de carregamento.
+- **Astro**: Framework principal para construção do site. Astro permite criar sites rápidos e otimizados, com suporte a componentes nativos e geração de páginas estáticas. O site é gerado de forma 100% estática e publicado na AWS (S3 + CloudFront) via SST. É ideal para conteúdo focado em performance.
 - **Tailwind CSS**: Utilizado para estilização dos componentes, proporcionando um design responsivo e moderno.
 - **Prettier**: Ferramenta de formatação de código utilizada para manter a consistência e legibilidade do código-fonte em todo o projeto.
 
@@ -23,7 +22,7 @@ Em desenvolvimento. Muitas funcionalidades ainda estão sendo implementadas e re
 
 Para executar o projeto localmente:
 
-1. Certifique-se de que o PNPM está instalado. Se não estiver, instale-o globalmente:
+1. Certifique-se de que o Node.js 22.23+ e o PNPM estão instalados. Se o PNPM não estiver, instale-o globalmente:
 
    ```bash
    npm install -g pnpm
